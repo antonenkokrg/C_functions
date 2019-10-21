@@ -3,22 +3,23 @@
 #                                                         :::      ::::::::    #
 #    makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ilantone <ilantone@student.42.fr>          +#+  +:+       +#+         #
+#    By: ilya <ilya@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/22 13:56:55 by ilantone          #+#    #+#              #
-#    Updated: 2019/09/23 11:19:55 by ilantone         ###   ########.fr        #
+#    Updated: 2019/09/24 10:56:21 by ilya             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
-SRCS = srcs/*.c
+SRC = src/*.c
 OBJECTS = *.o
-HEADERS_FOLDER = includes
+HEADERS = libft.h
+FLAG = -Wall -Wextra -Werror
 
 all: $(NAME)
 
 $(NAME):
-	gcc -I$(HEADERS_FOLDER) -c $(SRCS)
+	gcc $(FLAG) -I$(HEADERS) -c $(SRC)
 	ar -rv $(NAME) $(OBJECTS)
 	ranlib $(NAME)
 
